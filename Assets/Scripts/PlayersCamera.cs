@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayersCamera : MonoBehaviour
@@ -16,7 +14,7 @@ public class PlayersCamera : MonoBehaviour
         _offset = transform.position - _targetTransform.position;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 targetPosition = new(_targetTransform.position.x + _offset.x,
             Mathf.Clamp(_targetTransform.position.y, _minYPosition, _maxYPosition),
