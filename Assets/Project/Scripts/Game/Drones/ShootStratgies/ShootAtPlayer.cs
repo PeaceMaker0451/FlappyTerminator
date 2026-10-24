@@ -7,19 +7,16 @@ public class ShootAtPlayer : ShootStrategy
 
     private float _shootTime = float.MinValue;
 
-    public float TargetAngle { get; private set; }
-
     public override void Tick(Transform player, IDroneWeapon shooter)
     {
         Vector3 difference = player.position - shooter.transform.position;
-        TargetAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        float targetAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        shooter.RotateAt(Mathf.LerpAngle(shooter.CurrentAngle, TargetAngle, _aimSpeed * Time.deltaTime));
+        shooter.RotateAt(Mathf.LerpAngle(shooter.CurrentAngle, targetAngle, _aimSpeed * Time.deltaTime));
 
         if (Time.time > _shootTime + _shootDelay)
         {
             _shootTime = Time.time;
-
             shooter.Shoot();
         }
     }

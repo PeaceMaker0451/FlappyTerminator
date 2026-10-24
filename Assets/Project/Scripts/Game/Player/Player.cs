@@ -34,6 +34,12 @@ public class Player : MonoBehaviour, IDisableOnDeath
         _input.GameplayShoot.performed += OnPlayerShoot;
     }
 
+    private void OnDestroy()
+    {
+        _input.GameplayJump.performed -= OnPlayerJump;
+        _input.GameplayShoot.performed -= OnPlayerShoot;
+    }
+
     private void OnPlayerShoot(InputAction.CallbackContext context)
     {
         if(enabled == false) return;

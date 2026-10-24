@@ -13,6 +13,11 @@ public class DeathActer : MonoBehaviour
         _lifeState.Died += OnDied;
     }
 
+    private void OnDestroy()
+    {
+        _lifeState.Died -= OnDied;
+    }
+
     private void OnDied()
     {
         IActOnDeath[] components;

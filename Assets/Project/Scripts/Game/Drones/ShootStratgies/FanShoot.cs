@@ -10,8 +10,6 @@ public class FanShoot : ShootStrategy
     private float _fanProgress = 0;
     private int _direction = 1;
 
-    public float TargetAngle { get; private set; }
-
     public override void Tick(Transform player, IDroneWeapon shooter)
     {
         Vector3 difference = player.position - shooter.transform.position;
@@ -30,8 +28,8 @@ public class FanShoot : ShootStrategy
             _direction = 1;
         }
 
-        TargetAngle = angleToPlayer + _fanAngle / 2f * _fanProgress;
-        shooter.RotateAt(TargetAngle);
+        float targetAngle = angleToPlayer + _fanAngle / 2f * _fanProgress;
+        shooter.RotateAt(targetAngle);
 
         if (Time.time >= _shootTime + _shootDelay)
         {
