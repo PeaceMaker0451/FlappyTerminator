@@ -15,6 +15,11 @@ public class DeathDisabler : MonoBehaviour
         _components = GetComponentsInChildren<IDisableOnDeath>();
     }
 
+    private void OnDestroy()
+    {
+        _lifeState.Died -= OnDied;
+    }
+
     private void OnDied()
     {
         foreach (var component in _components)

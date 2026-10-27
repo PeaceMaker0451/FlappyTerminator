@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShootStraight : ShootStrategy
+public class ShootStraight : WeaponStrategy
 {
     [SerializeField] private float _shootDelay = 1f;
 

@@ -3,7 +3,7 @@ using Zenject;
 
 public class CommonGameScenarioInstaller : MonoInstaller
 {
-    [SerializeField] private CommomGameSenario _gameSenario;
+    [SerializeField] private CommomGameScenario _gameSenario;
 
     public override void InstallBindings()
     {

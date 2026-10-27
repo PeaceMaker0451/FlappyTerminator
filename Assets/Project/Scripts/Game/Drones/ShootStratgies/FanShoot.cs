@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FanShoot : ShootStrategy
+public class FanShoot : WeaponStrategy
 {
     [SerializeField] private float _shootDelay = 0.2f;
     [SerializeField] private float _aimSpeed = 1f;

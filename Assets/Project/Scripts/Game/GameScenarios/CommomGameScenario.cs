@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public class CommomGameSenario : IGameScenario
+public class CommomGameScenario : IGameScenario
 {
     [SerializeField] private int _maxDifficulty = 200;
     [SerializeField] private int _mediumEnemiesThreshold = 50;

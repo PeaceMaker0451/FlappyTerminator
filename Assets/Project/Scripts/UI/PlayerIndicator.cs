@@ -32,15 +32,20 @@ public class PlayerIndicator : MonoBehaviour
         UpdateHealth();
     }
 
-    private void UpdateHealth()
+    private void OnDestroy()
     {
-        _healthField.SetMaxValue(_health.MaxPoints);
-        _healthField.SetValue(_health.Points);
+        _health.Changed -= UpdateHealth;
     }
 
     private void Update()
     {
         _shootReadyField.SetValue(_player.ShootDelay - _player.ShootReadyTime);
         _jumpReadyField.SetValue(_player.JumpDelay - _player.JumpReadyTime);
+    }
+
+    private void UpdateHealth()
+    {
+        _healthField.SetMaxValue(_health.MaxPoints);
+        _healthField.SetValue(_health.Points);
     }
 }

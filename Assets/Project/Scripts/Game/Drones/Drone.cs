@@ -3,7 +3,7 @@ using Zenject;
 public class Drone : MonoBehaviour, IDisableOnDeath
 {
     [SerializeField] private ProjectileTypes _projectileType = ProjectileTypes.Bullets;
-    [SerializeField] private ShootStrategy _shootStrategy;
+    [SerializeField] private WeaponStrategy _shootStrategy;
     [SerializeField] private DroneWeapon _weapon;
     
     private IProjectileSpawner _shooter;

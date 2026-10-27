@@ -6,12 +6,12 @@ public class WorldCycleficator : MonoBehaviour
 
     private float _baseXDistance;
 
-    void Start()
+    private void Start()
     {
         _baseXDistance = transform.position.x;
     }
 
-    void Update()
+    private void Update()
     {
         if (transform.position.x < _baseXDistance - _returnDistance)
             transform.position = new(

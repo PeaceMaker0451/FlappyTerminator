@@ -33,6 +33,11 @@ public class Bullet : MonoBehaviour, IProjectile
             Clear();
     }
 
+    private void OnDestroy()
+    {
+        _damageOnEnter.Damaged -= OnDamage;
+    }
+
     public void Initialize(Action onDestory)
     {
         _onDestroy = onDestory;

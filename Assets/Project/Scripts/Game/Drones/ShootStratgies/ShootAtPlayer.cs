@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShootAtPlayer : ShootStrategy
+public class ShootAtPlayer : WeaponStrategy
 {
     [SerializeField] private float _shootDelay = 1f;
     [SerializeField] private float _aimSpeed = 1f;

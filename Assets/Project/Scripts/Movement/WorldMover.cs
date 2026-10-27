@@ -12,7 +12,7 @@ public class WorldMover : MonoBehaviour
     private void Inject(World world)
     {
         _world = world;
-        _world.WorldSpeedChanged += SetWorldSpeed;
+        
     }
 
     private void Start()
@@ -20,7 +20,13 @@ public class WorldMover : MonoBehaviour
         if (_world == null)
             throw new NullReferenceException("World компонент не установлен");
 
+        _world.WorldSpeedChanged += SetWorldSpeed;
         SetWorldSpeed(_world.Speed);
+    }
+
+    private void OnDestroy()
+    {
+        _world.WorldSpeedChanged -= SetWorldSpeed;
     }
 
     private void Update()
