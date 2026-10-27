@@ -1,5 +1,5 @@
 ﻿public enum ProjectileTypes
 {
-    Bullets,
-    RadioDefense
+    Bullets = 1,
+    RadioDefense = 2
 }

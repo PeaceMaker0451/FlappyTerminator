@@ -1,6 +1,6 @@
 ﻿public enum EnemyType
 {
-    RandomEasy,
-    RandomMedium,
-    RandomHard
+    RandomEasy = 1,
+    RandomMedium = 2,
+    RandomHard = 3
 }
